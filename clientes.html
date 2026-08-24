@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form>
+            <h2 class="cabecalho">Cadastro de clientes</h2>
+
+            <label for="nome">Nome do cliente</label>
+            <input type="text" placeholder="Digite o nome do cliente" required>
+
+            <label for="codCliente">Código do cliente</label>
+            <input type="text" placeholder="Digite o código do cliente" required>
+
+            <button onclick="gravar()" id="botao">Gravar</button>
+
+            <a href="menu.html">
+                        <button type="button">Voltar</button>
+                    </a>
+
+            <p id="mensagem"></p>
+        </form>
+    </div>
+
+    <script>
+        let mensagem = document.getElementById("mensagem");
+
+        function gravar(){
+            event.preventDefault();
+            mensagem.innerText = "Cliente gravado com sucesso.";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esqueci minha senha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form>
+            <h2 class="cabecalho">Esqueci a Senha</h2>
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Digite seu email" required>
+
+            <label for="senha">Nova Senha</label>
+            <input type="password" id="senha" placeholder="Digite sua senha" required>
+
+            <label for="NovaSenha">Confirmar nova Senha</label>
+            <input type="password" id="NovaSenha" placeholder="Confirme sua senha" required>
+
+            <button id="botao">Validar</button>
+            <a href="login.html">
+                <button type="button">Voltar para login</button>
+            </a>
+            <p id="resultado"></p>
+        </form>
+    </div>
+    <script>
+        
+        let senha = document.getElementById("senha");
+        let NovaSenha = document.getElementById("NovaSenha");
+        let resultado = document.getElementById("resultado");
+        let botao = document.getElementById("botao");
+
+        function validar(){
+            if(senha.value == NovaSenha.value){
+                resultado.innerText = "Senha atualizada com sucesso, volte à tela principal.";
+            }
+            else{
+                resultado.innerText = "As senhas são diferentes.";
+            }
+            event.preventDefault();
+        };
+
+        botao.addEventListener("click", validar);
+    </script>
+</body>
+</html>

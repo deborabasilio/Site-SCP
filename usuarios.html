@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de usuários</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form>
+            <h2 class="cabecalho">Cadastro de Usuários</h2>
+
+            <label for="codigo">Código</label>
+            <input type="text" placeholder="Digite o código" required>
+
+            <label for="nomeComp">Nome Completo</label>
+            <input type="text" placeholder="Digite o seu nome completo" required>
+
+            <label for="login">login</label>
+            <input type="text" placeholder="Digite o login" required>
+
+            <label for="email">email</label>
+            <input type="email" placeholder="Digite o email" required>
+
+            <label for="senha">Senha</label>
+            <input type="password" placeholder="Digite a senha" required>
+
+            <label for="catUsuario">Categoria do usuário</label>
+            <select id="catUsuario" required>
+                <option value="" disabled selected>Selecione a categoria</option>
+                <option value="ADM">Administrador</option>
+                <option value="comum">Usuário comum</option>
+            </select>
+
+            <button onclick="gravar()" id="botao">Gravar</button>
+
+            <a href="menu.html">
+                <button type="button">Voltar</button>
+            </a>
+
+            <p id="mensagem"></p>
+        </form>
+    </div>
+
+    <script>
+        let mensagem = document.getElementById("mensagem");
+
+        function gravar(){
+            event.preventDefault();
+            mensagem.innerText = "Usuário gravado com sucesso.";
+        }
+    </script>
+
+</body>
+</html>

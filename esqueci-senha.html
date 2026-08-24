@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <form>
+        <form onsubmit="validar(event)">
             <h2 class="cabecalho">Esqueci a Senha</h2>
             <label for="email">Email</label>
             <input type="email" id="email" placeholder="Digite seu email" required>
@@ -19,10 +19,8 @@
             <label for="NovaSenha">Confirmar nova Senha</label>
             <input type="password" id="NovaSenha" placeholder="Confirme sua senha" required>
 
-            <button id="botao">Validar</button>
-            <a href="login.html">
-                <button type="button">Voltar para login</button>
-            </a>
+            <button type="submit" id="botao">Validar</button>
+            <a class="botao" href="index.html">Voltar para login</a>
             <p id="resultado"></p>
         </form>
     </div>
@@ -33,7 +31,7 @@
         let resultado = document.getElementById("resultado");
         let botao = document.getElementById("botao");
 
-        function validar(){
+        function validar(event){
             if(senha.value == NovaSenha.value){
                 resultado.innerText = "Senha atualizada com sucesso, volte à tela principal.";
             }
@@ -43,7 +41,6 @@
             event.preventDefault();
         };
 
-        botao.addEventListener("click", validar);
     </script>
 </body>
 </html>

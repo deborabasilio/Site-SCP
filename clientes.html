@@ -8,20 +8,18 @@
 </head>
 <body>
     <div class="container">
-        <form>
+        <form onsubmit="gravar(event)">
             <h2 class="cabecalho">Cadastro de clientes</h2>
 
             <label for="nome">Nome do cliente</label>
-            <input type="text" placeholder="Digite o nome do cliente" required>
+            <input type="text" id="nome" placeholder="Digite o nome do cliente" required>
 
             <label for="codCliente">Código do cliente</label>
-            <input type="text" placeholder="Digite o código do cliente" required>
+            <input type="text" id="codCliente" placeholder="Digite o código do cliente" required>
 
-            <button onclick="gravar()" id="botao">Gravar</button>
+            <button type="submit" id="botao">Gravar</button>
 
-            <a href="menu.html">
-                        <button type="button">Voltar</button>
-                    </a>
+            <a class="botao" href="menu.html">Voltar</a>
 
             <p id="mensagem"></p>
         </form>
@@ -30,7 +28,7 @@
     <script>
         let mensagem = document.getElementById("mensagem");
 
-        function gravar(){
+        function gravar(event){
             event.preventDefault();
             mensagem.innerText = "Cliente gravado com sucesso.";
         }

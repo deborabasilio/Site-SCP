@@ -8,23 +8,21 @@
 </head>
 <body>
     <div class="container">
-        <form>
+        <form onsubmit="gravar(event)">
             <h2 class="cabecalho">Cadastro de Categorias</h2>
             <label for="codcat">Código da Categoria</label>
-            <input type="text" placeholder="Digite o código" required>
+            <input type="text" id="codcat" placeholder="Digite o código" required>
             <label for="descricao">Descrição</label>
-            <textarea placeholder="Digite a descrição" required></textarea>
-            <button onclick="gravar()" id="botao">Gravar</button>
-            <a href="menu.html">
-                <button type="button">Voltar</button>
-            </a>
+            <textarea id="descricao" placeholder="Digite a descrição" required></textarea>
+            <button type="submit" id="botao">Gravar</button>
+            <a class="botao" href="menu.html">Voltar</a>
             <p id="mensagem"></p>
         </form>
     </div>
     <script>
         let mensagem = document.getElementById("mensagem");
 
-        function gravar(){
+        function gravar(event){
             event.preventDefault();
             mensagem.innerText = "Categoria gravada com sucesso.";
         }

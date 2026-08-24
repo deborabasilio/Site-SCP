@@ -10,7 +10,7 @@
 
 <body>
     <div class="container">
-        <form>
+        <form onsubmit="gravar(event)">
         <h2 class="cabecalho">Cadastro de Produtos</h2>
             <label for="codigo">Código do produto</label>
             <input type="text" id="codigo" placeholder="Digite o código" required>
@@ -32,11 +32,9 @@
                 <option value="ferramentas">Ferramentas</option>
             </select>
 
-            <button onclick="gravar()" id="botao">Gravar</button>
+            <button type="submit" id="botao">Gravar</button>
 
-            <a href="menu.html">
-                <button type="button">Voltar</button>
-            </a>
+            <a class="botao" href="menu.html">Voltar</a>
 
             <p id="mensagem"></p>
         </form>
@@ -45,7 +43,7 @@
     <script>
         let mensagem = document.getElementById("mensagem");
 
-        function gravar(){
+        function gravar(event){
             event.preventDefault();
             mensagem.innerText = "Produto gravado com sucesso.";
         }

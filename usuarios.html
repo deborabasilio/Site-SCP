@@ -8,23 +8,23 @@
 </head>
 <body>
     <div class="container">
-        <form>
+        <form onsubmit="gravar(event)">
             <h2 class="cabecalho">Cadastro de Usuários</h2>
 
             <label for="codigo">Código</label>
-            <input type="text" placeholder="Digite o código" required>
+            <input type="text" id="codigo" placeholder="Digite o código" required>
 
             <label for="nomeComp">Nome Completo</label>
-            <input type="text" placeholder="Digite o seu nome completo" required>
+            <input type="text" id="nomeComp" placeholder="Digite o seu nome completo" required>
 
             <label for="login">login</label>
-            <input type="text" placeholder="Digite o login" required>
+            <input type="text" id="login" placeholder="Digite o login" required>
 
             <label for="email">email</label>
-            <input type="email" placeholder="Digite o email" required>
+            <input type="email" id="email" placeholder="Digite o email" required>
 
             <label for="senha">Senha</label>
-            <input type="password" placeholder="Digite a senha" required>
+            <input type="password" id="senha" placeholder="Digite a senha" required>
 
             <label for="catUsuario">Categoria do usuário</label>
             <select id="catUsuario" required>
@@ -33,11 +33,9 @@
                 <option value="comum">Usuário comum</option>
             </select>
 
-            <button onclick="gravar()" id="botao">Gravar</button>
+            <button type="submit" id="botao">Gravar</button>
 
-            <a href="menu.html">
-                <button type="button">Voltar</button>
-            </a>
+            <a class="botao" href="menu.html">Voltar</a>
 
             <p id="mensagem"></p>
         </form>
@@ -46,7 +44,7 @@
     <script>
         let mensagem = document.getElementById("mensagem");
 
-        function gravar(){
+        function gravar(event){
             event.preventDefault();
             mensagem.innerText = "Usuário gravado com sucesso.";
         }

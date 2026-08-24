@@ -123,6 +123,7 @@ button, .botao {
 }
 
 .botao {
+    line-height: 42px;
     text-align: center;
 }
 
